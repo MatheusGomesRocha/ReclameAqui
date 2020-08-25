@@ -77,7 +77,7 @@ function CustomTabBar ({state, descriptors, navigation}) {          /** Props qu
                     return(
                         <TouchHome bg={isFocused?'#C50750':'#F61067'} underlayColor="#C50750" key={index} onPress={handleTabPress}>
                             <>
-                            <Icon name={nameIcon} size={35} color="#fff"/>
+                            <Icon name={nameIcon} size={35} color={isFocused?'#fff':'#aaa'}/>
                             </>
                         </TouchHome>
                     );

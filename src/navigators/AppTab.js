@@ -1,7 +1,7 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';           /** Import da tela que vai usar */
-import UserScreen from '../screens/HomeScreen';
+import UserScreen from '../screens/UserScreen';
 import CustomTabBar from '../components/CustomTabBar';      /** Import para a TabBar Customizada */
 
 
