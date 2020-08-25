@@ -75,7 +75,7 @@ function CustomTabBar ({state, descriptors, navigation}) {          /** Props qu
 
                 if(route.name == 'Comments') {       /** Se o nome dar rota for 'Profile' vai receber components diferentes */ 
                     return(
-                        <TouchHome bg={isFocused?'#C50750':'#F61067'} underlayColor="#C50750" key={index} onPress={handleTabPress}>
+                        <TouchHome bg={isFocused?'#F61067':'#C50750'} underlayColor="#F61067" key={index} onPress={handleTabPress}>
                             <>
                             <Icon name={nameIcon} size={35} color={isFocused?'#fff':'#aaa'}/>
                             </>

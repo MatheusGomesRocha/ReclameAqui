@@ -13,7 +13,7 @@ import {
 export default () => {
     return(
         <Container>
-            <Texto> Pesquise sobre a reputação de algum lugar, restaurante de Paramoti</Texto>
+            <Texto> Pesquise sobre a reputação de algum lugar ou restaurante de Paramoti</Texto>
             <InputView>
                 <Input placeholder="Busque por um lugar" placeholderTextColor="#bbb"/>
                 <Btn underlayColor="#C50750" onPress={() => alert('Testando')}>

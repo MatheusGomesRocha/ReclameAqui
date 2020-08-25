@@ -2,6 +2,7 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from '../screens/HomeScreen';           /** Import da tela que vai usar */
 import UserScreen from '../screens/UserScreen';
+import CommentsScreen from '../screens/CommentsScreen';
 import CustomTabBar from '../components/CustomTabBar';      /** Import para a TabBar Customizada */
 
 
@@ -26,9 +27,12 @@ export default () => {      /** Dentro do screen option é recomendado usar quan
         <Tab.Navigator 
         tabBar={(props) => <CustomTabBar {...props} />}
         initialRouteName="Home" 
+        tabBarOption={{
+            keyboardHidesTabBar: true
+        }}
         >
             <Tab.Screen name="Home" component={HomeScreen} tabBarLabel="Home"/>
-            <Tab.Screen name="Comments" component={UserScreen}/>
+            <Tab.Screen name="Comments" component={CommentsScreen}/>
             <Tab.Screen name="User" component={UserScreen}/>
         </Tab.Navigator>
     );

@@ -5,9 +5,9 @@ import AppTab from './src/navigators/AppTab';
 
 export default () => {
   return(
-    <NavigationContainer>
-      <AppTab />
-      <StatusBar backgroundColor="#5E239D" barStyle="light-content"/>
-    </NavigationContainer>
+      <NavigationContainer>
+        <AppTab />
+        <StatusBar backgroundColor="#5E239D" barStyle="light-content"/>
+      </NavigationContainer>
   );
 }
