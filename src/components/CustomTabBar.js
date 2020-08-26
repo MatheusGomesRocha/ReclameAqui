@@ -62,7 +62,7 @@ function CustomTabBar ({state, descriptors, navigation}) {          /** Props qu
                     case 'Comments':           /** Caso for About então... */
                         nameIcon = 'bullhorn'
                     break;
-                    case 'User':         /** Caso for Profile então... */
+                    case 'UserStack':         /** Caso for Profile então... */
                         nameIcon = 'user'
                     break;
                     case 'Notificações':

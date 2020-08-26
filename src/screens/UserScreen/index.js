@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {useNavigation} from '@react-navigation/native';
 
 import {
     Container,
@@ -14,6 +15,8 @@ import {
 } from './style';
 
 export default () => {
+    const navigation = useNavigation();
+
     const [user, setUser] = useState(false);            // Temporário, trocar para CurrentUser do Firebase
 
     
@@ -25,7 +28,7 @@ export default () => {
             </UserView>
 
             <DefaultView>
-                <ItemBtn>
+                <ItemBtn underlayColor="#511E88" onPress={() => navigation.navigate('login')}>
                     <>
                         <DefaultText> Faça Login </DefaultText> 
                         <Icon name="angle-right" size={30} color="#fff" />
