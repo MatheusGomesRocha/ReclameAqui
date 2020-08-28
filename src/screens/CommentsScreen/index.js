@@ -23,8 +23,8 @@ export default () => {
                     <Input placeholder="Deixe vazio caso prefira anônimato" placeholderTextColor="#bbb"/>
                 </InputView>
                 <InputView>
-                    <Label> Reclamação </Label>
-                    <Input style={{height: 250, textAlign: 'center'}} placeholder="Escreva aqui sua reclamação" placeholderTextColor="#bbb"/>
+                    <Label> Comentário </Label>
+                    <Input style={{height: 250, textAlign: 'center'}} placeholder="Escreva aqui seu comentário" placeholderTextColor="#bbb"/>
                 </InputView>
                 <Btn underlayColor="#C50750" onPress={() => alert('olá mundo')}>
                     <BtnText> Finalizar </BtnText>

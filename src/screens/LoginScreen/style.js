@@ -32,3 +32,12 @@ export const BtnText = styled.Text`
     font-size: 18px;
 `;
 
+export const RegisterView = styled.View`
+    flex-direction: row;
+    margin-top: 15px;
+`;
+export const RegisterText = styled.Text`
+    color: #ccc;
+    font-size: 16px;
+`;
+export const RegisterBtn = styled.TouchableOpacity``;
