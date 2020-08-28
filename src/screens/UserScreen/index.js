@@ -36,7 +36,7 @@ export default () => {
                 </ItemBtn>
                 {/* {user? */}
                     <>
-                        <ItemBtn>
+                        <ItemBtn underlayColor="#511E88" onPress={() => navigation.navigate('profile')}>
                             <>
                                 <DefaultText> Meu Perfil </DefaultText> 
                                 <Icon name="angle-right" size={30} color="#fff" />
