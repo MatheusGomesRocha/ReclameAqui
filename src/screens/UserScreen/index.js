@@ -34,7 +34,7 @@ export default () => {
                         <Icon name="angle-right" size={30} color="#fff" />
                     </>
                 </ItemBtn>
-                {user?
+                {/* {user? */}
                     <>
                         <ItemBtn>
                             <>
@@ -55,7 +55,7 @@ export default () => {
                             </>
                         </ItemBtn>
                     </>
-                : null}
+                {/* : null} */}
 
             </DefaultView>
 
