@@ -22,7 +22,7 @@ export default () => {
             <Icon style={{marginBottom: 50}} name="user-circle" color="#fff" size={80} />
             <Input placeholder="Email" placeholderTextColor="#bbb" />
             <Input placeholder="Senha" placeholderTextColor="#bbb" />
-            <Btn>
+            <Btn underlayColor="#C50750" onPress={() => alert('Testando')}>
                 <BtnText> Finalizar </BtnText>
             </Btn>
             <RegisterView>
