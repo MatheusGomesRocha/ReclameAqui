@@ -24,7 +24,7 @@ export default () => {
                 </InputView>
                 <InputView>
                     <Label> Comentário </Label>
-                    <Input style={{height: 250, textAlign: 'center'}} placeholder="Escreva aqui seu comentário" placeholderTextColor="#bbb"/>
+                    <Input multiline style={{height: 250, textAlign: 'center'}} placeholder="Escreva aqui seu comentário" placeholderTextColor="#bbb"/>
                 </InputView>
                 <Btn underlayColor="#C50750" onPress={() => alert('olá mundo')}>
                     <BtnText> Finalizar </BtnText>

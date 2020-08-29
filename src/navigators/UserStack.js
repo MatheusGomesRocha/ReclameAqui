@@ -4,6 +4,7 @@ import UserScreen from '../screens/UserScreen';
 import LoginScreen from '../screens/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen';
 import ProfileScreen from '../screens/ProfileScreen';
+import HistoryScreen from '../screens/HistoryScreen';
 
 const UserStack = createStackNavigator();
 
@@ -14,6 +15,7 @@ export default () => {
             <UserStack.Screen name="login" component={LoginScreen} options={{ headerTitle: 'LOGIN', headerTitleAlign: 'center', headerTintColor: '#fff', headerStyle: { height: 70, backgroundColor: '#5E239D'} }} />
             <UserStack.Screen name="register" component={RegisterScreen} options={{ headerTitle: 'CADASTRO', headerTitleAlign: 'center', headerTintColor: '#fff', headerStyle: { height: 70, backgroundColor: '#5E239D'} }} />
             <UserStack.Screen name="profile" component={ProfileScreen} options={{ headerTitle: 'EDITAR PERFIL', headerTitleAlign: 'center', headerTintColor: '#fff', headerStyle: { height: 70, backgroundColor: '#5E239D'} }} />
+            <UserStack.Screen name="history" component={HistoryScreen} options={{ headerTitle: 'HISTÓRICO', headerTitleAlign: 'center', headerTintColor: '#fff', headerStyle: { height: 70, backgroundColor: '#5E239D'} }} />
         </UserStack.Navigator>
     );
 }

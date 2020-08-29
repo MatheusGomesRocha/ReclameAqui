@@ -30,7 +30,7 @@ export default () => {
             <DefaultView>
                 <ItemBtn underlayColor="#511E88" onPress={() => navigation.navigate('login')}>
                     <>
-                        <DefaultText> Faça Login </DefaultText> 
+                        <DefaultText> Faça login </DefaultText> 
                         <Icon name="angle-right" size={30} color="#fff" />
                     </>
                 </ItemBtn>
@@ -38,11 +38,11 @@ export default () => {
                     <>
                         <ItemBtn underlayColor="#511E88" onPress={() => navigation.navigate('profile')}>
                             <>
-                                <DefaultText> Meu Perfil </DefaultText> 
+                                <DefaultText> Meu perfil </DefaultText> 
                                 <Icon name="angle-right" size={30} color="#fff" />
                             </>
                         </ItemBtn>
-                        <ItemBtn>
+                        <ItemBtn underlayColor="#511E88" onPress={() => navigation.navigate('history')}>
                             <>
                                 <DefaultText> Histórico </DefaultText> 
                                 <Icon name="angle-right" size={30} color="#fff" />
