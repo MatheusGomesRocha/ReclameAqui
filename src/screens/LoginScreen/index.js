@@ -28,7 +28,8 @@ function LoginScreen(props) {
         }  else {
             auth()      // Cria um usuário com email e senha no firebase Auth
             .signInWithEmailAndPassword(e, p)   
-            .then(() => {       
+            .then(() => {   
+                alert('Login realizado com sucesso');    
                 props.setEmail(e);
                 navigation.reset({
                     index: 0,
@@ -36,7 +37,6 @@ function LoginScreen(props) {
                         { name: 'Home' },
                     ]
                 });
-                alert('Login realizado com sucesso');
             })
             .catch(error => {
                 if (error) {
@@ -49,8 +49,8 @@ function LoginScreen(props) {
     return(
         <Container>
             <Icon style={{marginBottom: 50}} name="user-circle" color="#fff" size={80} />
-            <Input placeholder="Email" placeholderTextColor="#bbb" onChangeText={e=>setEmail(e)} />
-            <Input placeholder="Senha" placeholderTextColor="#bbb" onChangeText={p=>setPass(p)} />
+            <Input keyboardType="email-address" placeholder="Email" placeholderTextColor="#bbb" onChangeText={e=>setEmail(e)} />
+            <Input secureTextEntry={true} placeholder="Senha" placeholderTextColor="#bbb" onChangeText={p=>setPass(p)} />
             <Btn underlayColor="#C50750" onPress={() => SignIn(email, pass)}>
                 <BtnText> Finalizar </BtnText>
             </Btn>
