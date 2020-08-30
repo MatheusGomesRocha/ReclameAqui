@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "765625609108",
+    "firebase_url": "https://reclameaqui-b3208.firebaseio.com",
+    "project_id": "reclameaqui-b3208",
+    "storage_bucket": "reclameaqui-b3208.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765625609108:android:14dfe7eb7de9b3a6fffd81",
+        "android_client_info": {
+          "package_name": "com.reclameaquiparamoti"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765625609108-nrt8iv5d7fdt8fd17laaf9m5tv398qhn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbNc_UD5a7GZsCK2h_0KBy_adT65pe72g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765625609108-nrt8iv5d7fdt8fd17laaf9m5tv398qhn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
