@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useNavigation} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
@@ -13,15 +14,22 @@ import {
 } from './style';
 
 export default () => {
+    const navigation = useNavigation();
+
     const [title, setTitle] = useState();
     const [userName, setUserName] = useState();
     const [comment, setComment] = useState();
     
     const user = auth().currentUser;    // Pega o usuário logado (que acabou de logar junto com o cadastro)
 
+    let day = new Date().getDate();
+    let month = new Date().getMonth()+1;
+    let year = new Date().getFullYear()
+    let today = day+'/'+month+'/'+year;
+
     function DoComment() {
         if(title && comment) {
-            setUserName('0')
+            setUserName(null)
             firestore()
             .collection('comments')
             .add({
@@ -29,8 +37,10 @@ export default () => {
                 title: title,
                 userName: userName,
                 comment: comment,
+                date: today,
             })
             .then(() => {
+                navigation.navigate('Home');
                 alert('Comentário feito com sucesso');
             })
         }
@@ -49,7 +59,7 @@ export default () => {
                 </InputView>
                 <InputView>
                     <Label> Comentário </Label>
-                    <Input onChangeText={c=>setComment(c)} multiline style={{height: 250, textAlign: 'center'}} placeholder="Escreva aqui seu comentário" placeholderTextColor="#bbb"/>
+                    <Input onChangeText={c=>setComment(c)} multiline={true} style={{height: 250, textAlign: 'center'}} placeholder="Escreva aqui seu comentário" placeholderTextColor="#bbb"/>
                 </InputView>
                 <Btn underlayColor="#C50750" onPress={() => DoComment()}>
                     <BtnText> Finalizar </BtnText>

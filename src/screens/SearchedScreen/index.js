@@ -66,7 +66,7 @@ export default () => {
                                     <Icon name ="user-circle" size={50} color="#fff" />
                                     <Column>
                                         <NameText> {c.userName?c.userName:'Anônimo'} </NameText>
-                                        <Date> 28/08/2020 </Date> 
+                                        <Date> {c.date} </Date> 
                                     </Column>
                                 </RowChild>
                                 <Icon name="ellipsis-v" size={25} color="#bbb" />
