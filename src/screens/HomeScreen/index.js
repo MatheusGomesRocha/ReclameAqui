@@ -13,14 +13,14 @@ import {
 
 export default () => {
     const navigation = useNavigation();
-    const [t, setT] = useState();
+    const [search, setSearch] = useState();
 
     return(
         <Container>
             <Texto> Pesquise sobre a reputação de algum lugar ou restaurante de Paramoti</Texto>
             <InputView>
-                <Input placeholder="Busque por um lugar" placeholderTextColor="#bbb" onChangeText={t=>setT(t)}/>
-                <Btn underlayColor="#C50750" onPress={() => navigation.navigate('searched', { title: t })}>
+                <Input returnKeyType="search" onSubmitEditing={() => navigation.navigate('searched', { title: search })} placeholder="Busque por um lugar" placeholderTextColor="#bbb" onChangeText={t=>setSearch(t)}/>
+                <Btn underlayColor="#C50750" onPress={() => navigation.navigate('searched', { title: search })}>
                     <Icon name="search" size={25} color="#fff"/>
                 </Btn>
             </InputView>

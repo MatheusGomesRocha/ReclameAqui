@@ -13,26 +13,27 @@ import {
 } from './style';
 
 export default () => {
-    const [placeName, setPlaceName] = useState();
+    const [title, setTitle] = useState();
     const [userName, setUserName] = useState();
     const [comment, setComment] = useState();
     
     const user = auth().currentUser;    // Pega o usuário logado (que acabou de logar junto com o cadastro)
 
     function DoComment() {
-        if(placeName && comment) {
+        if(title && comment) {
             setUserName('0')
             firestore()
             .collection('comments')
             .add({
                 userId: user.uid,
-                placeName: placeName,
+                title: title,
                 userName: userName,
                 comment: comment,
             })
             .then(() => {
                 alert('Comentário feito com sucesso');
             })
+        }
     }
 
     return(
@@ -40,7 +41,7 @@ export default () => {
             <Scroll>
                 <InputView>
                     <Label> Nome do local </Label>
-                    <Input placeholder="Empresa, Lugar, Restaurantes..." placeholderTextColor="#bbb" onChangeText={pn=>setPlaceName(pn)} />
+                    <Input placeholder="Empresa, Lugar, Restaurantes..." placeholderTextColor="#bbb" onChangeText={t=>setTitle(t)} />
                 </InputView>
                 <InputView>
                     <Label> Seu nome </Label>

@@ -3,46 +3,51 @@ import styled from 'styled-components/native';
 export const Container = styled.SafeAreaView`
     flex: 1;
     background-color: #5E239D;
-    padding: 20px;
 
 `;
-export const Scroll = styled.ScrollView``;
+export const Scroll = styled.ScrollView`
+    padding: 30px;
+`;
 export const BigText = styled.Text`
     color: #fff;
     font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 80px;
+    text-align: left;
 `;
 export const CommentView = styled.View`
 `;
 export const ItemView = styled.View`
-    margin-bottom: 80px
-    
+    margin: 0 0px 40px 0px;
+`;
+export const Title = styled.Text`
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
 `;
 export const Row = styled.View`
     flex-direction: row;
+    margin-bottom: 15px;
     justify-content: space-between;
-
 `;
 export const RowChild = styled.View`
     flex-direction: row;
-    justify-content: space-between;
 
 `;
 export const Column = styled.View`
     flex-direction: column;
-    padding: 5px;
 
 `;
 export const UserImg = styled.Image``;
 export const NameText = styled.Text`
-    color: #fff;
     font-size: 16px;
+    color: #ccc;
+    margin-left: 10px;
 `;
 export const Date = styled.Text`
-    color: #bbb;
+    margin-left: 10px;
+    color: #aaa;
 `;
 export const CommentText = styled.Text`
-    color: #fff;
-    margin-top: 15px;
+    color: #ccc;
+    font-size: 16px;
 `;
