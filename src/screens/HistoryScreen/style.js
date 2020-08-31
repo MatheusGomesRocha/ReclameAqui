@@ -23,7 +23,10 @@ export const Title = styled.Text`
 `;
 export const Date = styled.Text`
     color: #bbb;
+    margin-top: 2px;
 `;
 export const DefaultText = styled.Text`
     color: #fff;
+    margin-top: 2px;
+
 `;

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import {useNavigation} from '@react-navigation/native';
 
 import {
     Alert,
@@ -22,6 +23,8 @@ import {
 } from './style';
 
 export default () => {
+    const navigation = useNavigation();
+
     const [modalVisible, setModalVisible] = useState(false);
     const [email, setEmail] = useState('');
     const [name, setName] = useState('');
@@ -50,7 +53,6 @@ export default () => {
 
     function UpdateData() {     // Função que realiza o update das infos do usuário
       if(confirmPass == pass) {
-        if(newName || newEmail) {      // Verifica se tem algum desses preenchido
             
             // Cria novas variáveis
             let nameFire = '';    
@@ -77,6 +79,12 @@ export default () => {
               passFire = pass;
             }
 
+            navigation.reset({
+              index: 0,
+              routes: [
+                  { name: 'Home' },
+              ]
+          });
             firestore()     // Realiza o update 
             .collection('users')
             .doc(user.uid)
@@ -88,9 +96,6 @@ export default () => {
             .then(() => {
                 alert('Usuário editado');
             });
-        } else {
-            alert('Você não digitou nada');
-        }
     } else {
         alert('Senhas não coincidem')
     }
@@ -112,7 +117,7 @@ export default () => {
             <View style={styles.centeredView}>
                 <View style={styles.modalView}>
 
-                    <Input style={{width: '100%'}} placeholder='Confirme sua senha' onChangeText={cp=>setConfirmPass(cp)}/>
+                    <Input blurOnSubmit={true} onSubmitEditing={UpdateData} secureTextEntry={true} style={{width: '100%'}} placeholder='Confirme sua senha' onChangeText={cp=>setConfirmPass(cp)}/>
 
                     <TouchableHighlight
                     style={{ ...styles.openButton, backgroundColor: "#F61067" }}
@@ -127,8 +132,8 @@ export default () => {
               <InputView>
               <Input defaultValue={name} placeholder="Nome" placeholderTextColor="#bbb" onChangeText={n=>setNewName(n)} />
               <Input defaultValue={email} placeholder="Email" placeholderTextColor="#bbb" onChangeText={e=>setNewEmail(e)} />
-              <Input placeholder="*****" placeholderTextColor="#bbb" onChangeText={p=>setNewPass(p)} />
-              <Btn underlayColor="#C50750" onPress={() => setModalVisible(true)}>
+              <Input secureTextEntry={true} placeholder="*****" placeholderTextColor="#bbb" onChangeText={p=>setNewPass(p)} />
+              <Btn underlayColor="#C50750" onPress={() => newName || newEmail || newPass? setModalVisible(true): alert('Você não digitou nada')}>
                   <BtnText> Editar </BtnText>
               </Btn>
               </InputView>

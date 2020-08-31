@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
+import OptionsMenu from "react-native-option-menu";
 
 import {
     Container,
@@ -47,7 +48,11 @@ export default () => {
                     <ItemView key={k}>
                         <Row>
                             <Title>{h.title} </Title>
-                            <Icon name="ellipsis-v" size={20} color="#bbb"/>
+                            <OptionsMenu
+                                    customButton={<Icon name="ellipsis-v" size={25} color="#bbb" />}                                 
+                                    buttonStyle={{ width: 60, height: 8, margin: 7.5, resizeMode: "contain" }}
+                                    options={["Excluir"]}
+                                />
                         </Row>
                         <Date>{h.date} </Date>
                         <DefaultText>{h.comment} </DefaultText>
