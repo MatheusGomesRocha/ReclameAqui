@@ -1,18 +1,36 @@
 import styled from 'styled-components/native';
 
+
+// Toda a tela
 export const Container = styled.SafeAreaView`
     flex: 1;
     background-color: #5E239D;
-
 `;
+
+
+// Rolagem da tela
 export const Scroll = styled.ScrollView`
     padding: 30px;
 `;
+
+
+// Texto grande no topo da tela
 export const BigText = styled.Text`
     color: #fff;
     font-size: 18px;
     text-align: left;
 `;
+
+
+// + View pai dos comentários
+// + View filha dos comentários dentro do array
+// + Título (nome do lugar)
+// + View pai horizontal
+// + View filha horizontal
+// + View dentro da RowChild em coluna
+// + Nome do usuário
+// + Data do comentário
+// + Comentário
 export const CommentView = styled.View`
 `;
 export const ItemView = styled.View`

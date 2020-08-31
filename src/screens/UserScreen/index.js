@@ -5,26 +5,27 @@ import auth from '@react-native-firebase/auth';
 import { connect, useSelector } from 'react-redux';
 
 import {
-    Container,
-    Scroll,
-    UserView,
-    UserEmail,
-    DefaultView,
-    ItemBtn,
-    DefaultText
+    Container,      // Toda a tela
 
+    Scroll,         // Rolagem da tela
     
+    UserView,       // View com icone e email do usuário
+    UserEmail,      // Texto com email do usuário
+
+    DefaultView,    // View com todos os itens 
+    ItemBtn,        // Botão com um item
+    DefaultText     // Texto padrão dentro do botão
 } from './style';
 
 function UserScreen(props) {
     const navigation = useNavigation();
 
-    const user = useSelector(state => state.user.email);
+    const user = useSelector(state => state.user.email);        // Pega o email do redux
 
     let userSplit = user.split('@')[0];     // Quebrando email para pegar o nome antes do @
 
 
-    function SignOut() {
+    function SignOut() {        // Função de realizar o SignOut (logOff)
         auth().signOut();
         props.SignOut();
         navigation.reset({
@@ -74,7 +75,6 @@ function UserScreen(props) {
                         </ItemBtn>
                     </>
                 : null}
-
             </DefaultView>
 
         </Container>
@@ -83,7 +83,7 @@ function UserScreen(props) {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        SignOut:(SignOut)=>dispatch({type:'SIGN_OUT'}),     // Log Out
+        SignOut:(SignOut)=>dispatch({type:'SIGN_OUT'}),     // LogOut
     };
 }
 

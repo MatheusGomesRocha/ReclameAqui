@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+
+// Toda a tela
 export const Container = styled.SafeAreaView`
     flex: 1;
     justify-content: center;
@@ -7,6 +9,10 @@ export const Container = styled.SafeAreaView`
     background-color: #5E239D;
 `;
 
+
+// + Input
+// + Botão de realizar login
+// + Texto do botão
 export const Input = styled.TextInput`
     background-color: #fff;
     padding: 10px;
@@ -16,7 +22,6 @@ export const Input = styled.TextInput`
     width: 80%;
     margin-top: 10px;
 `;
-
 export const Btn = styled.TouchableHighlight`
     background-color: #F61067;
     height: 60px;
@@ -26,12 +31,15 @@ export const Btn = styled.TouchableHighlight`
     align-items: center;
     justify-content: center;
 `;
-
 export const BtnText = styled.Text`
     color: #fff;
     font-size: 18px;
 `;
 
+
+// + View com texto para realizar cadastro
+// + Texto do cadastro
+// + Botão para ir para o cadastro
 export const RegisterView = styled.View`
     flex-direction: row;
     margin-top: 15px;

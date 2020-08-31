@@ -3,12 +3,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
 
 import {
-    Container,
+    Container,      // Toda a tela
 
-    Texto,
-    InputView,
-    Input,
-    Btn,
+    Texto,          // Texto padrão
+    InputView,      // View de input
+    Input,          // Input
+    Btn,            // Button com o ícone de search para pesquisa
 } from './style';
 
 export default () => {

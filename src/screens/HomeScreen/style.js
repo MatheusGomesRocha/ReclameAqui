@@ -1,5 +1,7 @@
 import styled from 'styled-components/native';
 
+
+// Toda a tela
 export const Container = styled.SafeAreaView`
     flex: 1;
     background-color: #5E239D;
@@ -7,18 +9,21 @@ export const Container = styled.SafeAreaView`
     justify-content: center;
 `;
 
+
+// + Texto padrão
+// + View de input
+// + Input
+// + Button com o ícone de search para pesquisa
 export const Texto = styled.Text`
     color: #fff;
     font-size: 20px;
     text-align: center;
     margin: 0 25px 30px 25px;
 `;
-
 export const InputView = styled.View`
     flex-direction: row;
     width: 80%;
 `;
-
 export const Input = styled.TextInput`
     flex: 1;
     padding: 10px;
@@ -29,7 +34,6 @@ export const Input = styled.TextInput`
     borderTopLeftRadius: 10px;
     borderBottomLeftRadius: 10px;
 `;
-
 export const Btn = styled.TouchableHighlight`
     align-items: center;
     justify-content: center;

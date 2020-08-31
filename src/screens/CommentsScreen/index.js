@@ -3,15 +3,17 @@ import {useNavigation} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
-import {KeyboardAvoidingView} from 'react-native';
 import {
-    Container,
-    Scroll,
-    InputView,
-    Label,
-    Input,
-    Btn,
-    BtnText
+    Container,  // Toda a tela
+
+    Scroll,     // Rolagem da tela
+
+    InputView,  // View de input
+    Label,      // Texto "título" do input
+    Input,      // Input
+
+    Btn,        // Botão de finalizar comentário
+    BtnText     // Texto de botão
 } from './style';
 
 export default () => {
@@ -21,15 +23,15 @@ export default () => {
     const [userName, setUserName] = useState();
     const [comment, setComment] = useState();
     
-    const user = auth().currentUser;    // Pega o usuário logado (que acabou de logar junto com o cadastro)
+    const user = auth().currentUser;    // Pega o usuário logado 
 
-    let day = new Date().getDate();
-    let month = new Date().getMonth()+1;
-    let year = new Date().getFullYear()
-    let today = day+'/'+month+'/'+year;
+    let day = new Date().getDate();         // Pega dia atual
+    let month = new Date().getMonth()+1;    // Mês atual + 1 porque é pego um mês antes do atual
+    let year = new Date().getFullYear()     // Ano atual
+    let today = day+'/'+month+'/'+year;     // Data formatada para o padrão do Brasil
 
-    function DoComment() {
-        if(title && comment) {
+    function DoComment() {  // Função que realiza o comentário
+        if(title && comment) {  // Só adiciona caso tenha título e comentário
             navigation.navigate('Home');
             setUserName(null)
             firestore()
@@ -51,7 +53,7 @@ export default () => {
 
     return(
         <Container>
-            <Scroll>
+            <Scroll showsVerticalScrollIndicator={false}>
                 <InputView>
                     <Label> Nome do local </Label>
                     <Input placeholder="Empresa, Lugar, Restaurantes..." placeholderTextColor="#bbb" onChangeText={t=>setTitle(t)} />

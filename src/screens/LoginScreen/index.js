@@ -2,18 +2,18 @@ import React, {useState} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useNavigation} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
-import {connect} from 'react-redux';
+import {connect} from 'react-redux';   // Lib que pega e adiciona os dados no redux
 
 import {
-    Container,
+    Container,      // Toda a tela
 
-    Input,
-    Btn,
-    BtnText,
+    Input,          // Input
+    Btn,            // Botão de realizar login
+    BtnText,        // Texto do botão
 
-    RegisterView,
-    RegisterText,
-    RegisterBtn,
+    RegisterView,   // View com texto para realizar cadastro
+    RegisterText,   // Texto do cadastro
+    RegisterBtn,    // Botão para ir para o cadastro
 } from './style';
 
 function LoginScreen(props) {
@@ -22,23 +22,23 @@ function LoginScreen(props) {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
 
-    function SignIn(e, p) {
-        if (!email || !pass) {
+    function SignIn(e, p) {     // Função de login
+        if (!email || !pass) {  // Senão tiver email ou senha digitado, tratá esse erro
             alert('Todos os campos são obrigatórios');
         }  else {
-            auth()      // Cria um usuário com email e senha no firebase Auth
+            auth()      // verifica se tem usuário com email e senha no firebase
             .signInWithEmailAndPassword(e, p)   
             .then(() => {   
                 alert('Login realizado com sucesso');    
-                props.setEmail(e);
-                navigation.reset({
+                props.setEmail(e);      // Seta email no redux
+                navigation.reset({      // Depois da um reset para a tela inicial
                     index: 0,
                     routes: [
                         { name: 'Home' },
                     ]
                 });
             })
-            .catch(error => {
+            .catch(error => {   // Caso email ou senha foram digitados incorretamentes
                 if (error) {
                     alert('Email ou senha incorreta');
                 }

@@ -1,12 +1,23 @@
 import styled from 'styled-components/native';
 
+
+// Toda a tela
 export const Container = styled.SafeAreaView`
     flex: 1;
     background-color: #5E239D;
 `;
 
+
+// Rolagem da tela
 export const Scroll = styled.ScrollView``;
 
+
+// + View pai
+// + View filha dentro do array
+// + View da linha que contém título e o Icon
+// + Título do comentário (lugar)
+// + Data que o comentário foi feito
+// + Texto com o comentário
 export const DefaultView = styled.View`
 `;
 export const ItemView = styled.View`
@@ -28,5 +39,4 @@ export const Date = styled.Text`
 export const DefaultText = styled.Text`
     color: #fff;
     margin-top: 2px;
-
 `;

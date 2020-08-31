@@ -5,11 +5,11 @@ import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
 import {
-    Container,
+    Container,      // Toda a tela
 
-    Input,
-    Btn,
-    BtnText,
+    Input,          // Input
+    Btn,            // Botão que realiza cadastro
+    BtnText,        // Texto do botão
 } from './style';
 
 export default () => {
@@ -20,12 +20,12 @@ export default () => {
     const [pass, setPass] = useState('');
     const [confirmPass, setConfirmPass] = useState('');
     
-    function SignUp(e, p) {
-        if(!name || !email || !pass || !confirmPass) {
+    function SignUp(e, p) {     // Função de cadastro
+        if(!name || !email || !pass || !confirmPass) {      // Todos os campos precisam está preenchidos
             alert('Todos os campos são obrigatórios');
-        } else if (pass != confirmPass) {
-            alert('As senhas não coincidem');
-        } else {
+        } else if (pass != confirmPass) {       // As senhas tem que ser iguais
+            alert('As senhas não coincidem');   
+        } else {    //  Se tudo estiver correto realiza o cadastro
             navigation.reset({
                 index: 0,
                 routes: [
@@ -43,11 +43,11 @@ export default () => {
                 .set({
                     id: user.uid,
                     name: name,
-                    email: user.email,
+                    email: e,
                     password: p,
                 })
             })
-            .catch(error => {
+            .catch(error => {       // Erro de se o email digitado já esteja cadastrado
                 if(error.code == 'auth/email-already-in-use') {     // Erro que acontece caso já tenha um usuário com o mesmo email
                     alert('Este email já está cadastro, tente outro');
                 }

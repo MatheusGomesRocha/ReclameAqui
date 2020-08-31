@@ -10,16 +10,15 @@ import {
     Text,
     TouchableHighlight,
     View,
-    KeyboardAvoidingView,
 } from "react-native";
 
 import {
-    Container,
-    Scroll,
-    InputView,
-    Input,
-    Btn,
-    BtnText,
+    Container,    // Toda a tela
+
+    InputView,    // View de Input
+    Input,        // Input
+    Btn,          // Botão "editar" que abre o modal pedindo pra confirmar a senha 
+    BtnText,      // Texto do botão
 } from './style';
 
 export default () => {
@@ -37,7 +36,7 @@ export default () => {
 
     const user = auth().currentUser;
 
-    useEffect(() => {       // Pega os dados na collection "users" do usuário logado, e setar em uma state, Email, Name, Avatar e Password
+    useEffect(() => {       // Pega os dados na collection "users" do usuário logado, e setar em uma state, Email, Name e Password
         firestore()
         .collection('users')
         .where('id', '==', user.uid)
@@ -104,7 +103,6 @@ export default () => {
   
     return(
         <Container>
-
             <Modal
             statusBarTranslucent={true}
                 animationType="slide"
