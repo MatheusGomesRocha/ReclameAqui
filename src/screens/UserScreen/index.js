@@ -21,6 +21,9 @@ function UserScreen(props) {
 
     const user = useSelector(state => state.user.email);
 
+    let userSplit = user.split('@')[0];     // Quebrando email para pegar o nome antes do @
+
+
     function SignOut() {
         auth().signOut();
         props.SignOut();
@@ -36,7 +39,7 @@ function UserScreen(props) {
         <Container>
             <UserView>
                 <Icon name="user-circle" color="#fff" size={70} />
-                <UserEmail> {user? user : 'Faça login'} </UserEmail>
+                <UserEmail> {user? userSplit : 'Faça login'} </UserEmail>
             </UserView>
 
             <DefaultView>

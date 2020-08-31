@@ -3,6 +3,7 @@ import {useNavigation} from '@react-navigation/native';
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
+import {KeyboardAvoidingView} from 'react-native';
 import {
     Container,
     Scroll,
@@ -43,6 +44,8 @@ export default () => {
             .then(() => {
                 alert('Comentário feito com sucesso');
             })
+        } else {
+            alert('Parece que você esqueceu de preencher algo');
         }
     }
 
@@ -59,7 +62,8 @@ export default () => {
                 </InputView>
                 <InputView>
                     <Label> Comentário </Label>
-                    <Input onChangeText={c=>setComment(c)} multiline={true} style={{height: 250, textAlign: 'center'}} placeholder="Escreva aqui seu comentário" placeholderTextColor="#bbb"/>
+                    <Input onChangeText={c=>setComment(c)} multiline={true} style={{
+                         textAlign: 'center'}} placeholder="Escreva aqui seu comentário" placeholderTextColor="#bbb"/>
                 </InputView>
                 <Btn underlayColor="#C50750" onPress={() => DoComment()}>
                     <BtnText> Finalizar </BtnText>
