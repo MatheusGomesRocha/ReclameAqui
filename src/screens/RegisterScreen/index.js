@@ -44,6 +44,7 @@ export default () => {
                     id: user.uid,
                     name: name,
                     email: user.email,
+                    password: p,
                 })
             })
             .catch(error => {

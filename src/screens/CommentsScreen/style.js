@@ -30,7 +30,7 @@ export const Input = styled.TextInput`
 export const Btn = styled.TouchableHighlight`
     background-color: #F61067;
     height: 60px;
-    margin: 50px 30px 50px 30px;
+    margin: 40px 30px 50px 30px;
     border-radius: 10px;
     align-items: center;
     justify-content: center;

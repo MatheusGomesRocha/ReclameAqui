@@ -36,7 +36,7 @@ function UserScreen(props) {
         <Container>
             <UserView>
                 <Icon name="user-circle" color="#fff" size={70} />
-                <UserEmail> {user? user.email : 'Faça login'} </UserEmail>
+                <UserEmail> {user? user : 'Faça login'} </UserEmail>
             </UserView>
 
             <DefaultView>
