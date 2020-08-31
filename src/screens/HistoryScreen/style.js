@@ -8,14 +8,15 @@ export const Container = styled.SafeAreaView`
 export const Scroll = styled.ScrollView``;
 
 export const DefaultView = styled.View`
-    padding: 20px;
-    margin-top: 20px;
+`;
+export const ItemView = styled.View`
+    padding: 30px;
 `;
 export const Row = styled.View`
     flex-direction: row;
     justify-content: space-between;
 `;
-export const PlaceName = styled.Text`
+export const Title = styled.Text`
     color: #fff;
     font-weight: bold;
     font-size: 16px;

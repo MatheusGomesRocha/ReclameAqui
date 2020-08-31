@@ -29,6 +29,7 @@ export default () => {
 
     function DoComment() {
         if(title && comment) {
+            navigation.navigate('Home');
             setUserName(null)
             firestore()
             .collection('comments')
@@ -40,7 +41,6 @@ export default () => {
                 date: today,
             })
             .then(() => {
-                navigation.navigate('Home');
                 alert('Comentário feito com sucesso');
             })
         }

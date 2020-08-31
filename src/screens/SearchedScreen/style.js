@@ -16,7 +16,7 @@ export const BigText = styled.Text`
 export const CommentView = styled.View`
 `;
 export const ItemView = styled.View`
-    margin: 0 0px 40px 0px;
+    margin-bottom: 40px;
 `;
 export const Title = styled.Text`
     margin-bottom: 10px;

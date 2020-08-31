@@ -26,6 +26,12 @@ export default () => {
         } else if (pass != confirmPass) {
             alert('As senhas não coincidem');
         } else {
+            navigation.reset({
+                index: 0,
+                routes: [
+                    { name: 'login' },
+                ]
+            });
             alert('Conta criada, agora faça o login');
             auth()      // Cria um usuário com email e senha no firebase Auth
             .createUserWithEmailAndPassword(e, p)   
@@ -39,12 +45,6 @@ export default () => {
                     name: name,
                     email: user.email,
                 })
-                navigation.reset({
-                    index: 0,
-                    routes: [
-                        { name: 'login' },
-                    ]
-                });
             })
             .catch(error => {
                 if(error.code == 'auth/email-already-in-use') {     // Erro que acontece caso já tenha um usuário com o mesmo email
