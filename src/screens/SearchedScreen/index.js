@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useRoute} from '@react-navigation/native';
 import firestore from '@react-native-firebase/firestore';
-
+import OptionsMenu from "react-native-option-menu";
 import {
     Container,
     Scroll,
@@ -50,6 +50,8 @@ export default () => {
         return item.title.indexOf(userSearch) >=0
     }) 
 
+    const myIcon = (<Icon name="ellipsis-v" size={25} color="#bbb" />)
+
     return(
         <Container>
             <Scroll showsVerticalScrollIndicator={false}>
@@ -69,7 +71,11 @@ export default () => {
                                         <Date> {c.date} </Date> 
                                     </Column>
                                 </RowChild>
-                                <Icon name="ellipsis-v" size={25} color="#bbb" />
+                                <OptionsMenu
+                                    customButton={myIcon}                                 
+                                    buttonStyle={{ width: 60, height: 8, margin: 7.5, resizeMode: "contain" }}
+                                    options={["Reportar por spam", "Reportar comentário"]}
+                                />
                             </Row>
                             <CommentText>{c.comment} </CommentText>
                         </>
