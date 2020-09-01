@@ -44,16 +44,6 @@ function UserScreen(props) {
             </UserView>
 
             <DefaultView>
-                {user? null :
-                    <ItemBtn underlayColor="#511E88" onPress={() => navigation.navigate('login')}>
-                        <>
-                            <DefaultText> Faça login </DefaultText> 
-                            <Icon name="angle-right" size={30} color="#fff" />
-                        </>
-                    </ItemBtn>
-                }
-
-                {user?
                     <>
                         <ItemBtn underlayColor="#511E88" onPress={() => navigation.navigate('profile')}>
                             <>
@@ -74,7 +64,6 @@ function UserScreen(props) {
                             </>
                         </ItemBtn>
                     </>
-                : null}
             </DefaultView>
 
         </Container>

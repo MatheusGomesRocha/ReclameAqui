@@ -1,11 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import styled from 'styled-components/native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {useSelector} from 'react-redux';
 
 const Div = styled.View `
     flex-direction: row;
     background-color: #5E239D;
-    borderTopWidth: 1px;
+    borderTopWidth: ${props=>props.tWidth};
     borderTopColor: #dedede;
 `;
 
@@ -32,8 +33,16 @@ const TouchHome = styled.TouchableHighlight `
 `;
 
 function CustomTabBar ({state, descriptors, navigation}) {          /** Props que vem para facilitar a customização */
+    const user = useSelector(state=>state.user.email);
+
+    let tWidth = '0';
+    useEffect(() => {
+        if(user) {
+            tWidth = '1px';
+        }
+    }, [])
     return (
-        <Div>
+        <Div tWidth={tWidth}>
             {state.routes.map((route, index) => {       /** Um map das routes com um index/key */
                 const options = descriptors[route.key].options; /** options recebe um descriptors[route.key] que indica que pode acessar as rotas */
 

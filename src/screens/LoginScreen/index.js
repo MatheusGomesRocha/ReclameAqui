@@ -49,8 +49,8 @@ function LoginScreen(props) {
     return(
         <Container>
             <Icon style={{marginBottom: 50}} name="user-circle" color="#fff" size={80} />
-            <Input keyboardType="email-address" placeholder="Email" placeholderTextColor="#bbb" onChangeText={e=>setEmail(e)} />
-            <Input secureTextEntry={true} placeholder="Senha" placeholderTextColor="#bbb" onChangeText={p=>setPass(p)} />
+            <Input onSubmitEditing={() => SignIn(email, pass)} keyboardType="email-address" placeholder="Email" placeholderTextColor="#bbb" onChangeText={e=>setEmail(e)} />
+            <Input onSubmitEditing={() => SignIn(email, pass)} secureTextEntry={true} placeholder="Senha" placeholderTextColor="#bbb" onChangeText={p=>setPass(p)} />
             <Btn underlayColor="#C50750" onPress={() => SignIn(email, pass)}>
                 <BtnText> Finalizar </BtnText>
             </Btn>
